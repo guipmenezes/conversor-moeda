@@ -34,8 +34,6 @@ public class ConversorMoeda {
 						case "Reais para Peso Chileno":
 							converter.ConverterReaisParaPC(valorRecebido);
 					}
-					
-					
 			}
 		}
 	}

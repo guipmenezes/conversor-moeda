@@ -25,12 +25,12 @@ public class FuncaoConverter {
 	public void ConverterReaisParaPA(double valorRecebido) {
 		double moedaPA = valorRecebido / 0.035;
 		moedaPA = (double) Math.round(moedaPA * 100d)/100;
-		JOptionPane.showMessageDialog(null, "Você tem " + moedaPA + " Libras");
+		JOptionPane.showMessageDialog(null, "Você tem " + moedaPA + " Pesos Argentinos");
 	}
 	
 	public void ConverterReaisParaPC(double valorRecebido) {
 		double moedaPC = valorRecebido / 5.96;
 		moedaPC = (double) Math.round(moedaPC * 100d)/100;
-		JOptionPane.showMessageDialog(null, "Você tem " + moedaPC + " Libras");
+		JOptionPane.showMessageDialog(null, "Você tem " + moedaPC + " Pesos Chilenos");
 	}
 }
