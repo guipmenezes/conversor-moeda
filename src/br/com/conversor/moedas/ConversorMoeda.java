@@ -6,35 +6,49 @@ public class ConversorMoeda {
 	public static void main(String[] args) {
 		
 		try {
-			FuncaoConverter converter = new FuncaoConverter();
+			FuncaoConverterMoeda converterMoeda = new FuncaoConverterMoeda();
+			FuncaoConverterTemperatura converterTemperatura = new FuncaoConverterTemperatura();
 			
 			while(true) {
 				String options = JOptionPane.showInputDialog(null, "Escolha uma opção", "Menu", JOptionPane.PLAIN_MESSAGE, null, new Object[]{"Conversor de moeda", "Conversor de temperatura"}, "Escolha").toString();
 				switch(options)  {
 					case "Conversor de moeda":
-						String input = JOptionPane.showInputDialog("Insira um valor em reais");
-						double valorRecebido = Double.parseDouble(input);
+						String inputMoeda = JOptionPane.showInputDialog("Insira um valor em reais");
+						double valorRecebido = Double.parseDouble(inputMoeda);
 						String optionsMoeda = JOptionPane.showInputDialog(null, "Escolha uma opção", "Menu", JOptionPane.PLAIN_MESSAGE, null, new Object[]{"Reais para Dolar", "Reais para Euro", "Reais para Libra Esterlina", "Reais para Peso Argentino", "Reais para Peso Chileno"}, "Escolha").toString();
 						switch(optionsMoeda) {
 							case "Reais para Dolar":		
-								converter.ConverterReaisParaDolar(valorRecebido);
+								converterMoeda.ConverterReaisParaDolar(valorRecebido);
 						}
 						switch(optionsMoeda) {
 							case "Reais para Euro":
-								converter.ConverterReaisParaEuro(valorRecebido);
+								converterMoeda.ConverterReaisParaEuro(valorRecebido);
 						}
 						switch(optionsMoeda) {
 							case "Reais para Libra Esterlina":
-								converter.ConverterReaisParaLibras(valorRecebido);
+								converterMoeda.ConverterReaisParaLibras(valorRecebido);
 						}
 						switch(optionsMoeda) {
 							case "Reais para Peso Argentino":
-								converter.ConverterReaisParaPA(valorRecebido);
+								converterMoeda.ConverterReaisParaPA(valorRecebido);
 						}
 						switch(optionsMoeda) {
 							case "Reais para Peso Chileno":
-								converter.ConverterReaisParaPC(valorRecebido);
+								converterMoeda.ConverterReaisParaPC(valorRecebido);
 						}
+					case "Conversor de temperatura":
+						String inputTemperatura = JOptionPane.showInputDialog("Insira uma temperatura em Celsius");
+						double valorTemperatura = Double.parseDouble(inputTemperatura);
+						String optionsTemperatura = JOptionPane.showInputDialog(null, "Escolha uma escala", "Menu", JOptionPane.PLAIN_MESSAGE, null, new Object[]{"Kelvin", "Fahrenheit"}, "Escolha").toString();
+						switch(optionsTemperatura) {
+							case "Kelvin":
+								converterTemperatura.converterCelsiusParaKelvin(valorTemperatura);
+						}
+						switch(optionsTemperatura) {
+							case "Fahrenheit":
+								converterTemperatura.converterCelsiusParaFahrenheit(valorTemperatura);
+						}
+						
 						switch(JOptionPane.showConfirmDialog(null, "Deseja continuar", "Informação", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE)) {
 							case 1:
 								JOptionPane.showMessageDialog(null, "Programa finalizado");

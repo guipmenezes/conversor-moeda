@@ -2,7 +2,7 @@ package br.com.conversor.moedas;
 
 import javax.swing.JOptionPane;
 
-public class FuncaoConverter {
+public class FuncaoConverterMoeda {
 
 	public void ConverterReaisParaDolar(double valorRecebido) {
 		double moedaDolar = valorRecebido / 5.30;
