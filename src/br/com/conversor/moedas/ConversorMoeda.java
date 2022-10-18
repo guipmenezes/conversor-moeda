@@ -15,7 +15,7 @@ public class ConversorMoeda {
 					case "Conversor de moeda":
 						String inputMoeda = JOptionPane.showInputDialog("Insira um valor em reais");
 						double valorRecebido = Double.parseDouble(inputMoeda);
-						String optionsMoeda = JOptionPane.showInputDialog(null, "Escolha uma opção", "Menu", JOptionPane.PLAIN_MESSAGE, null, new Object[]{"Reais para Dolar", "Reais para Euro", "Reais para Libra Esterlina", "Reais para Peso Argentino", "Reais para Peso Chileno"}, "Escolha").toString();
+						String optionsMoeda = JOptionPane.showInputDialog(null, "Escolha uma opção", "Menu", JOptionPane.PLAIN_MESSAGE, null, new Object[]{"Reais para Dolar", "Reais para Euro", "Reais para Libra Esterlina", "Reais para Peso Argentino", "Reais para Peso Chileno", "Reais para Kwanzas"}, "Escolha").toString();
 						switch(optionsMoeda) {
 							case "Reais para Dolar":		
 								converterMoeda.ConverterReaisParaDolar(valorRecebido);
@@ -36,6 +36,11 @@ public class ConversorMoeda {
 							case "Reais para Peso Chileno":
 								converterMoeda.ConverterReaisParaPC(valorRecebido);
 						}
+						switch(optionsMoeda) {
+							case "Reais para Kwanzas":
+								converterMoeda.ConverterReaisParaKwanza(valorRecebido);
+						}
+					
 					case "Conversor de temperatura":
 						String inputTemperatura = JOptionPane.showInputDialog("Insira uma temperatura em Celsius");
 						double valorTemperatura = Double.parseDouble(inputTemperatura);
@@ -48,12 +53,16 @@ public class ConversorMoeda {
 							case "Fahrenheit":
 								converterTemperatura.converterCelsiusParaFahrenheit(valorTemperatura);
 						}
-						
+					case "":
 						switch(JOptionPane.showConfirmDialog(null, "Deseja continuar", "Informação", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE)) {
-							case 1:
-								JOptionPane.showMessageDialog(null, "Programa finalizado");
-							case 2:
-								JOptionPane.showMessageDialog(null, "Programa Concluído");
+						case 0:
+							JOptionPane.showMessageDialog(null, "Continuando...");
+						case 1:
+							JOptionPane.showMessageDialog(null, "Programa finalizado");
+							break;
+						case 2:
+							JOptionPane.showMessageDialog(null, "Programa Concluído");
+							break;
 						}
 			}
 		}

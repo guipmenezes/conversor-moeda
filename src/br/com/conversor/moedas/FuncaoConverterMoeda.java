@@ -33,4 +33,10 @@ public class FuncaoConverterMoeda {
 		moedaPC = (double) Math.round(moedaPC * 100d)/100;
 		JOptionPane.showMessageDialog(null, "Você tem " + moedaPC + " Pesos Chilenos");
 	}
+	
+	public void ConverterReaisParaKwanza(double valorRecebido) {
+		double moedaKwanza = valorRecebido / 0.012;
+		moedaKwanza = (double) Math.round(moedaKwanza * 100d) /100;
+		JOptionPane.showMessageDialog(null, "Você tem " + moedaKwanza + " Kwanzas");
+	}
 }
