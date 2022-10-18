@@ -23,7 +23,16 @@ public class ConversorMoeda {
 							converter.ConverterReaisParaEuro(valorRecebido);
 					}
 					switch(optionsMoeda) {
-						
+						case "Reais para Libra Esterlina":
+							converter.ConverterReaisParaLibras(valorRecebido);
+					}
+					switch(optionsMoeda) {
+						case "Reais para Peso Argentino":
+							converter.ConverterReaisParaPA(valorRecebido);
+					}
+					switch(optionsMoeda) {
+						case "Reais para Peso Chileno":
+							converter.ConverterReaisParaPC(valorRecebido);
 					}
 					
 					
