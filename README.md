@@ -8,5 +8,5 @@
 
 <p>Foi um grande desafio para mim, tendo em vista que eu nunca tive nenhum contato anterior com a biblioteca javax.swing para criação da interface, mas estou contente com o resultado alcançado. Atualmente planejo realizar alterações nos tamanhos de janela, estão pequenos.
 
-### Bibliotecas Java utilizadas:
+### &#128736; Bibliotecas Java utilizadas:
 <p>&#9832; javax.swing.JOptionPane
