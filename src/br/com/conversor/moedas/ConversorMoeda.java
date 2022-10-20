@@ -47,8 +47,9 @@ public class ConversorMoeda {
 					switch (optionsMoeda) {
 					case "Reais para Kwanzas":
 						converterMoeda.ConverterReaisParaKwanza(valorRecebido);
+						break;
 					}
-
+					default: break;
 				case "Conversor de temperatura":
 					String inputTemperatura = JOptionPane.showInputDialog("Insira uma temperatura em Celsius");
 					double valorTemperatura = Double.parseDouble(inputTemperatura);
@@ -63,22 +64,18 @@ public class ConversorMoeda {
 					case "Fahrenheit":
 						converterTemperatura.converterCelsiusParaFahrenheit(valorTemperatura);
 					}
-				case "":
+				case "Final":
 					switch (JOptionPane.showConfirmDialog(null, "Deseja continuar", "Informação",
-							JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE)) {
-					case 0:
-						JOptionPane.showMessageDialog(null, "Continuando...");
+							JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)) {
 					case 1:
-						JOptionPane.showMessageDialog(null, "Programa finalizado");
-						break;
-					case 2:
-						JOptionPane.showMessageDialog(null, "Programa Concluído");
-						break;
-					}
+						JOptionPane.showMessageDialog(null, "Programa se encerrando");
+						throw new RuntimeException();
 				}
 			}
+			
+			}
 		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, "Valor invalido");
+			JOptionPane.showMessageDialog(null, "Programa encerrado");
 		}
 	}
 }
