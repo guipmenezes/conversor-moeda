@@ -49,7 +49,8 @@ public class ConversorMoeda {
 						converterMoeda.ConverterReaisParaKwanza(valorRecebido);
 						break;
 					}
-					default: break;
+				default:
+					break;
 				case "Conversor de temperatura":
 					String inputTemperatura = JOptionPane.showInputDialog("Insira uma temperatura em Celsius");
 					double valorTemperatura = Double.parseDouble(inputTemperatura);
@@ -64,15 +65,14 @@ public class ConversorMoeda {
 					case "Fahrenheit":
 						converterTemperatura.converterCelsiusParaFahrenheit(valorTemperatura);
 					}
-				case "Final":
-					switch (JOptionPane.showConfirmDialog(null, "Deseja continuar", "Informação",
-							JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)) {
-					case 1:
-						JOptionPane.showMessageDialog(null, "Programa se encerrando");
-						throw new RuntimeException();
 				}
-			}
-			
+				switch (JOptionPane.showConfirmDialog(null, "Deseja continuar", "Informação", JOptionPane.YES_NO_OPTION,
+						JOptionPane.QUESTION_MESSAGE)) {
+				case 1:
+					JOptionPane.showMessageDialog(null, "Programa se encerrando");
+					throw new RuntimeException();
+				}
+
 			}
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, "Programa encerrado");
