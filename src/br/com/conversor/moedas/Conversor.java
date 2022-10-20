@@ -2,23 +2,24 @@ package br.com.conversor.moedas;
 
 import javax.swing.JOptionPane;
 
-public class ConversorMoeda {
+public class Conversor {
 
 	public static void main(String[] args) {
 
 		try {
 			FuncaoConverterMoeda converterMoeda = new FuncaoConverterMoeda();
 			FuncaoConverterTemperatura converterTemperatura = new FuncaoConverterTemperatura();
+			FuncaoConverterQuilometros converterQuilometros = new FuncaoConverterQuilometros();
 
 			while (true) {
-				String options = JOptionPane
-						.showInputDialog(null, "Escolha uma opção", "Menu", JOptionPane.PLAIN_MESSAGE, null,
-								new Object[] { "Conversor de moeda", "Conversor de temperatura" }, "Escolha")
-						.toString();
+				String options = JOptionPane.showInputDialog(null, "Escolha uma opção", "Menu",
+						JOptionPane.PLAIN_MESSAGE, null,
+						new Object[] { "Conversor de moeda", "Conversor de temperatura", "Conversor de Quilometros" },
+						"Escolha").toString();
 				switch (options) {
 				case "Conversor de moeda":
 					String inputMoeda = JOptionPane.showInputDialog("Insira um valor em reais");
-					double valorRecebido = Double.parseDouble(inputMoeda);
+					double valorMoeda = Double.parseDouble(inputMoeda);
 					String optionsMoeda = JOptionPane.showInputDialog(null, "Escolha uma opção", "Menu",
 							JOptionPane.PLAIN_MESSAGE, null,
 							new Object[] { "Reais para Dolar", "Reais para Euro", "Reais para Libra Esterlina",
@@ -26,30 +27,29 @@ public class ConversorMoeda {
 							"Escolha").toString();
 					switch (optionsMoeda) {
 					case "Reais para Dolar":
-						converterMoeda.ConverterReaisParaDolar(valorRecebido);
+						converterMoeda.converterReaisParaDolar(valorMoeda);
 					}
 					switch (optionsMoeda) {
 					case "Reais para Euro":
-						converterMoeda.ConverterReaisParaEuro(valorRecebido);
+						converterMoeda.converterReaisParaEuro(valorMoeda);
 					}
 					switch (optionsMoeda) {
 					case "Reais para Libra Esterlina":
-						converterMoeda.ConverterReaisParaLibras(valorRecebido);
+						converterMoeda.converterReaisParaLibras(valorMoeda);
 					}
 					switch (optionsMoeda) {
 					case "Reais para Peso Argentino":
-						converterMoeda.ConverterReaisParaPA(valorRecebido);
+						converterMoeda.converterReaisParaPA(valorMoeda);
 					}
 					switch (optionsMoeda) {
 					case "Reais para Peso Chileno":
-						converterMoeda.ConverterReaisParaPC(valorRecebido);
+						converterMoeda.converterReaisParaPC(valorMoeda);
 					}
 					switch (optionsMoeda) {
 					case "Reais para Kwanzas":
-						converterMoeda.ConverterReaisParaKwanza(valorRecebido);
+						converterMoeda.converterReaisParaKwanza(valorMoeda);
 						break;
 					}
-				default:
 					break;
 				case "Conversor de temperatura":
 					String inputTemperatura = JOptionPane.showInputDialog("Insira uma temperatura em Celsius");
@@ -65,6 +65,26 @@ public class ConversorMoeda {
 					case "Fahrenheit":
 						converterTemperatura.converterCelsiusParaFahrenheit(valorTemperatura);
 					}
+					break;
+				case "Conversor de Quilometros":
+					String inputQuilometros = JOptionPane.showInputDialog("Insira uma quilometragem para converter");
+					double valorQuilometros = Double.parseDouble(inputQuilometros);
+					String optionsQuilometros = JOptionPane.showInputDialog(null, "Escolha um comprimento", "Menu",
+							JOptionPane.PLAIN_MESSAGE, null, new Object[] { "Milhas", "Pes", "Anos Luz" }, "Escolha")
+							.toString();
+					switch(optionsQuilometros) {
+					case "Milhas":
+						converterQuilometros.converterKmParaMilhas(valorQuilometros);
+					}
+					switch(optionsQuilometros) {
+					case "Pes":
+						converterQuilometros.converterKmParaPes(valorQuilometros);
+					}
+					switch(optionsQuilometros) {
+					case "Anos Luz":
+						converterQuilometros.converterKmParaAnosLuz(valorQuilometros);
+					}
+					break;
 				}
 				switch (JOptionPane.showConfirmDialog(null, "Deseja continuar", "Informação", JOptionPane.YES_NO_OPTION,
 						JOptionPane.QUESTION_MESSAGE)) {
