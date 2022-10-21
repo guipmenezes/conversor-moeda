@@ -10,3 +10,6 @@
 
 ### &#128736; Bibliotecas Java utilizadas:
 <p>&#9832; javax.swing.JOptionPane
+
+### Badge do Challenge:
+<img width="400em" height="400em" align="center" src="badge-java-sprint-1.png"/>
