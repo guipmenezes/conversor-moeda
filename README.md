@@ -14,7 +14,7 @@
 
 <p>This project was realized in a two week Sprint, using Kanban to organize the backlog tasks.
 
-<p> It was a huge challenge for me, becuase I didn't have previous contact with the javax.swing library for creating interfaces, but I'm happy with the reached result. Actually I'm planning on doing some changes on the window size, because it's really small.
+<p> It was a huge challenge for me, because I didn't have previous contact with the javax.swing library to create interfaces, but I'm happy with the reached result. Actually I'm planning on doing some changes on the window size, because it's really small.
 
 ### &#128736; Biblioteca Java utilizada / Java Library:
 <p>&#9832; javax.swing.JOptionPane
